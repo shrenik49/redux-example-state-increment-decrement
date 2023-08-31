@@ -1,37 +1,37 @@
-import React from "react";
-import { connect } from "react-redux";
-
+import React from 'react';
+import { connect } from 'react-redux';
+import './style.css';
 class App extends React.Component {
   increment = () => {
     this.props.dispatch({
-      type: "INCREMENT"
+      type: 'INCREMENT',
     });
   };
 
   decrement = () => {
     this.props.dispatch({
-      type: "DECREMENT"
+      type: 'DECREMENT',
     });
   };
 
   render() {
     return (
       <div className="App mt-5">
-        <button onClick={this.increment} className="btn btn-success mr-5">
+        <button onClick={this.increment} className="incrementbuttonclass">
           Increment
         </button>
-        <button onClick={this.decrement} className="btn btn-danger">
+        <button onClick={this.decrement} className="decrementbuttonclass">
           Decrement
         </button>
-        <h2 className="mt-5 display-1">{this.props.count}</h2>
+        <h2 className="stateClass">{this.props.count}</h2>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    count: state.count
+    count: state.count,
   };
 };
 
